@@ -1,0 +1,86 @@
+<mat-card *ngIf="alumno" class="alumno-card">
+  <mat-card-title *ngIf="operacion === 'editar'">
+    Edición de Alumnos
+  </mat-card-title>
+  <mat-card-title *ngIf="operacion === 'agregar'">
+    Agregar un nuevo Alumno
+  </mat-card-title>
+
+  <form #f="ngForm" (ngSubmit)="guardar(f.value)">
+    <mat-card-content>
+      <mat-form-field class="all-width">
+        <input  matInput
+                required
+                name="nombre"
+                placeholder="Nombre"
+                [ngModel]="alumno.nombre">
+        <mat-error>Debe ingresar el nombre</mat-error>
+      </mat-form-field>
+      <br><br>
+
+      <mat-form-field  class="all-width">
+        <input  matInput
+                required
+                name="apellido"
+                placeholder="Apellido"
+                [ngModel]="alumno.apellido">
+        <mat-error>Debe ingresar el apellido</mat-error>
+      </mat-form-field>
+
+      <br>
+      <span class="mat-form-field-label">Sexo</span>
+      <mat-radio-group
+          [ngModel] = "alumno.sexo.id"
+          name="sexoId">
+          <mat-radio-button class="all-width"
+            *ngFor="let sexo of sexos"
+            [value] = "sexo.id">
+            {{sexo.descripcion}}<br/>
+          </mat-radio-button>
+      </mat-radio-group>
+
+      <br><br>
+      <mat-form-field  class="all-width">
+        <mat-select
+            placeholder="Perfil"
+            [ngModel]="alumno.perfil.id"
+            name="perfilId">
+            <mat-option *ngFor="let perfil of perfiles"
+              [value]="perfil.id">
+              {{ perfil.descripcion }}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+      <br><br>
+      <mat-checkbox [ngModel]="alumno.activo"
+                    name="activo" >
+        Activo
+      </mat-checkbox>
+
+    </mat-card-content>
+
+    <mat-card-footer>
+      <div class="action-buttons">
+        <button
+          mat-button
+          type="button"
+          (click)="cancelar()"
+          >
+          Cancelar
+        </button>
+        <button
+            type="submit"
+            mat-button
+            color="primary"
+            [disabled]="f.invalid"
+            >
+          Aceptar
+        </button>
+      </div>
+    </mat-card-footer>
+
+  </form>
+
+
+</mat-card>

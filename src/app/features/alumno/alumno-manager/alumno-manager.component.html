@@ -1,0 +1,11 @@
+<app-filter-box
+  (filtrar)="filtrarAlumnos($event)"
+>
+</app-filter-box>
+<app-alumno-lista
+  [alumnos]="alumnos"
+  (seleccionar)="seleccionarAlumno($event)"
+  (eliminar)="eliminarAlumno($event)"
+>
+</app-alumno-lista>
+<button mat-fab color="primary" class="boton-agregar" (click)="agregarAlumno()">+</button>

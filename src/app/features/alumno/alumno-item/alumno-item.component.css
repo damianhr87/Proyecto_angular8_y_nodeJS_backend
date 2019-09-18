@@ -1,0 +1,61 @@
+.item-container {
+  padding: 8px;
+  background-color: #fff;
+  border-radius: 4px;
+
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  grid-template-rows:    24px 12px;
+  grid-template-areas: 'imagen nombre'
+                       'imagen perfil';
+  width: calc(100% - 16px);
+}
+
+.imagen {
+  grid-area: imagen;
+
+  align-self: center;
+  justify-self: center;
+
+  font-size: 36px;
+  color: rgba(200,200,200, 0.87);
+  padding-bottom: 12px;
+}
+
+.perfil {
+  grid-area: perfil;
+
+  align-self: start;
+  padding-left: 10px;
+  font-size: 10px;
+  line-height: 0.7rem;
+  color: rgba(51, 51, 51, 0.50);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.nombre {
+  grid-area: nombre;
+  align-self: end;
+  padding-left: 10px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.seleccionado {
+  background-color: #606fc8;
+  color: #f8f8f8;
+}
+
+.seleccionado > .nombre {
+  color: rgba(255,255,255, 0.87);
+}
+
+.seleccionado > .perfil {
+  color: rgba(230,230,230, 0.87);
+}
+
+.seleccionado > mat-icon {
+  color: rgba(230,230,230, 0.87);
+}

@@ -1,0 +1,25 @@
+{
+  "name": "bio-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "dev": "ts-node-dev --respawn --transpileOnly ./server.ts",
+    "prod": "tsc && node ./app/app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jsonfile": "^5.0.0",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.4",
+    "jsonfile": "^5.0.0",
+    "ts-node-dev": "^1.0.0-pre.32",
+    "typescript": "^3.4.4"
+  },
+  "devDependencies": {
+    "@types/express": "^4.16.1",
+    "@types/node": "^11.13.7"
+  }
+}

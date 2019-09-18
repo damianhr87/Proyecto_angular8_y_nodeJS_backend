@@ -1,0 +1,29 @@
+:host() {
+  width: 100%;
+  padding: 16px;
+}
+
+.all-width {
+  width: 100%;
+}
+
+mat-radio-button {
+  margin-bottom: 8px;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 48px;
+  width: 100%;
+}
+
+button {
+  margin-right: 16px;
+}
+
+.alumno-card {
+  margin-left: 16px;
+  margin-right: 16px;
+}
